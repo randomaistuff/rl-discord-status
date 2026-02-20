@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <BakkesModPath>$(registry:HKEY_CURRENT_USER\Software\BakkesMod\AppPath@BakkesModPath)</BakkesModPath>
+    <BakkesModPath Condition="'$(BakkesModPath)'==''">$(AppData)\bakkesmod\bakkesmod</BakkesModPath>
+    <BakkesModSDKPath>$(BakkesModPath)\bakkesmodsdk</BakkesModSDKPath>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets" Condition="Exists('$(BakkesModSDKPath)\BakkesModSDK.props')">
+    <Import Project="$(BakkesModSDKPath)\BakkesModSDK.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="!Exists('$(BakkesModSDKPath)\BakkesModSDK.props')">
+    <AdditionalIncludeDirectories>$(BakkesModSDKPath)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    <AdditionalLibraryDirectories>$(BakkesModSDKPath)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    <AdditionalDependencies>pluginsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="!Exists('$(BakkesModSDKPath)\BakkesModSDK.props')">
+    <PostBuildEvent>
+      <Command>"$(BakkesModSDKPath)\bakkesmod-patch.exe" "$(TargetPath)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+</Project>

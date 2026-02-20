@@ -1,0 +1,17 @@
+# Build output
+bin/
+build/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.pdb
+*.ipdb
+*.iobj
+*.exp
+*.lib
+*.ilk
+
+# Don't ship discord-rpc binaries (user downloads themselves)
+win64-dynamic/

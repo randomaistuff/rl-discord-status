@@ -1,0 +1,8 @@
+RL Discord Status
+1|Show stadium name|rlds_show_stadium
+1|Show score|rlds_show_score
+4|Score style (0=Full, 1=Minimal, 2=Win/Loss)|rlds_score_style|0|2
+1|Show time remaining|rlds_show_time
+1|Show game mode|rlds_show_mode
+1|Show rank (ranked modes)|rlds_show_rank
+1|Show elapsed match timer|rlds_show_elapsed
