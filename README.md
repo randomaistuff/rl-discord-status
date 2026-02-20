@@ -12,9 +12,7 @@ Shows your Rocket League game info on your Discord status in real-time.
 
 ## Installation
 
-Install via the [BakkesMod Plugin Manager](https://bakkesmodplugins.com/plugins/RLDiscordStatus).
-
-The plugin installer will handle everything automatically.
+Install via the [BakkesMod Plugin Manager](https://bakkesplugins.com) — search for **RL Discord Status**.
 
 ## Settings
 
